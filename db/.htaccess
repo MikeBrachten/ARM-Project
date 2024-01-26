@@ -1,0 +1,4 @@
+# This ensures the db folder is not accessible from the browser
+
+Order deny,allow
+Deny from all

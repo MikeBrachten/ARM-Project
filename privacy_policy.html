@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy ARM Study</title>
+    <script type="text/javascript">
+        // Catch centry time upon loading script
+        let entryTime = new Date().getTime();
+
+        // Calculate exit time and time spent and send to server
+        window.onbeforeunload = function () {
+            let exitTime = new Date().getTime();
+            let timeSpent = exitTime - entryTime;
+            sendTimeToServer(timeSpent);
+        }
+
+        // Function to send the time to the server
+        function sendTimeToServer(timeSpent) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'record_visit.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            let participantId = new URLSearchParams(window.location.search).get('participant_id');
+            let data = 'participant_id=' + encodeURIComponent(participantId) + '&entryTime=' + entryTime + '&exitTime=' + new Date().getTime() + '&timeSpent=' + timeSpent;
+            xhr.send(data);
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 75%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1><strong>Privacy Policy for the "Technological Usage Patterns Among Students" Study</strong></h1>
+        <h2><strong>1. Acceptance of Terms</strong></h2>
+        <p>This Privacy Policy is an integral part of your participation in the "Technological Usage Patterns Among
+            Students" study. By accessing and using our survey platform, you signify your explicit understanding and
+            acceptance of the terms outlined here. This policy applies to all data collected during your participation
+            in the study. If at any time you find yourself in disagreement with any part of this policy, we respectfully
+            request that you abstain from participating in the study. Your participation is entirely voluntary and is
+            subject to the terms presented herein.</p>
+        <h2><strong>2. Information Collection</strong></h2>
+        <p>We engage in a comprehensive data collection process to enhance the validity and accuracy of our research
+            findings. This process includes the collection of:</p>
+        <ul>
+            <li>Detailed responses to survey questions, which may include personal opinions, experiences, and
+                demographic information.</li>
+            <li>Specific device information, such as the type of device (mobile, tablet, desktop), operating system,
+                browser type, and other related technical details to understand the technology usage patterns.</li>
+            <li>Interaction metrics with our survey and externally hosted pages, including the time spent, scrolling
+                behavior, and any interactions with the content, to analyze engagement levels.</li>
+            <li>Timestamps and frequency of interactions with our survey platform to monitor participation rates and
+                study behavioral patterns over time.</li>
+        </ul>
+        <h2><strong>3. Use of Information</strong></h2>
+        <p>The collected information serves multiple research purposes:</p>
+        <ul>
+            <li>To gain a comprehensive understanding of the technological habits and preferences among university
+                students.</li>
+            <li>To perform in-depth analyses of how different demographic groups interact with technology.</li>
+            <li>To correlate technology usage patterns with academic and personal outcomes.</li>
+            <li>The information will help in understanding the general attitudes towards privacy policies and data
+                protection awareness among the student population.</li>
+        </ul>
+        <h2><strong>4. Data Storage and Security</strong></h2>
+        <p>We prioritize the security and confidentiality of your data. Here are our rigorous measures:</p>
+        <ul>
+            <li>All data is securely stored on encrypted servers managed by Utrecht University and <a
+                    href="https://mbwebsolutions.nl/">MB Web Solutions</a>.</li>
+            <li>Regular audits and updates are conducted to keep our security measures robust and up-to-date.</li>
+            <li>Access to the data is strictly limited to authorized research personnel and is governed by strict
+                confidentiality agreements.</li>
+            <li>In the event of a data breach, affected participants will be notified promptly through a message on the
+                Qualtrics study, and all necessary steps will be taken to minimize any potential impact.</li>
+        </ul>
+        <h2><strong>5. Data Retention</strong></h2>
+        <p>The retention of collected data is managed as follows:</p>
+        <ul>
+            <li>Data is retained for a period of three years post-study completion to allow for thorough analysis and
+                publication of research findings.</li>
+            <li>After this period, all personal data will be either securely destroyed or anonymized, ensuring that
+                individual participants cannot be identified from the retained information.</li>
+            <li>The decision to anonymize or destroy the data is contingent on its relevance to ongoing or future
+                research, with a strong preference for anonymization to facilitate longitudinal studies.</li>
+        </ul>
+        <h2><strong>6. IP Address and Session Tracking</strong></h2>
+        <p>While we do not actively collect IP addresses for profiling purposes, our systems automatically record
+            session information as part of maintaining the integrity of the survey and its responses. This includes:</p>
+        <ul>
+            <li>Date and time of access to the survey.</li>
+            <li>Duration of the session.</li>
+            <li>Any re-access patterns that might indicate repeated participation or technical issues.</li>
+            <li>This information is crucial in preventing fraudulent entries and ensuring the reliability of our survey
+                results.</li>
+        </ul>
+        <h2><strong>7. Participant Consent</strong></h2>
+        <p>Your participation in the survey is contingent upon your consent, which is considered granted upon your
+            survey engagement. This consent includes agreement to:</p>
+        <ul>
+            <li>The collection and analysis of your survey responses and interaction data.</li>
+            <li>The use of this data in accordance with this privacy policy.</li>
+            <li>We assure you that your participation is voluntary, and you may withdraw your consent at any time
+                without any adverse consequences.</li>
+            <li>You understand that the real goal of this study is to track whether you read this privacy policy, so
+                please refrain from sharing this with others as this might compromise study validity.</li>
+        </ul>
+        <h2><strong>8. Your Rights</strong></h2>
+        <p>As a participant, you are entitled to certain rights regarding your personal data:</p>
+        <ul>
+            <li>Access: You can request a summary of the personal data we hold about you.</li>
+            <li>Correction: If you find that any data we hold is incorrect, you have the right to have it corrected.
+            </li>
+            <li>Deletion: Under certain conditions, you may request the deletion of your data from our records.</li>
+            <li>These rights can be exercised through the contact details provided in section 10.</li>
+        </ul>
+        <p>Please note your participant ID in the link you're currently viewing if you plan on using these rights, as
+            otherwise you can not be identified anymore. Storing this link should be sufficient.</p>
+        <h2><strong>9. Changes to the Privacy Policy</strong></h2>
+        <p>Our Privacy Policy may undergo amendments:</p>
+        <ul>
+            <li>Any changes will be communicated through our study platform. Check the link for updates.</li>
+            <li>We encourage periodic review of this policy to stay informed about how we are protecting your data.</li>
+            <li>Continued participation in the study after such changes constitutes acceptance of the new terms.</li>
+        </ul>
+        <h2><strong>10. Contact Information</strong></h2>
+        <p>For any inquiries or concerns regarding this privacy policy or your data:</p>
+        <ul>
+            <li>Please reach out to us via c.e.w.brachten@students.uu.nl.</li>
+            <li>Our team is dedicated to addressing any of your questions and ensuring your experience with our study is
+                comfortable and informed.</li>
+        </ul>
+    </div>
+</body>
+
+</html>
